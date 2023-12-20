@@ -7,20 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Login")
-public class DemoServ extends HttpServlet {
+@WebServlet("/profile")
+public class DemoServ2 extends HttpServlet
+{
 
-	
-	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html");
 		PrintWriter p = resp.getWriter();
 		String uname = req.getParameter("uname");
-		String password = req.getParameter("password");
-		if(password.equals("admin"))
-		{
-			RequestDispatcher d = request.getRequestDispatcher("profile")
-		}
+		
+		p.print("Welcome to your profile"+uname+"");
 		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,5 +26,5 @@ public class DemoServ extends HttpServlet {
 
 	
 
-	
+
 }
