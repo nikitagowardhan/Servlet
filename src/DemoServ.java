@@ -25,7 +25,7 @@ public class DemoServ extends HttpServlet {
 			//RequestDispatcher d = req.getRequestDispatcher("Profile");
 			//d.forward(req, resp);
 			//req.getRequestDispatcher("Profile").forward(req, resp);
-			resp.sendRedirect("Profile");
+			resp.sendRedirect("https://github.com/nikitagowardhan");
 		}
 		else
 		{
