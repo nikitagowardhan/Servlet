@@ -17,20 +17,20 @@ public class DemoServ extends HttpServlet {
 		resp.setContentType("text.html");
 		PrintWriter p = resp.getWriter();
 		
-		String uname = req.getParameter("uname");
+		String b = req.getParameter("uname");
 		String upass = req.getParameter("passwd");
 		
 		if(upass.equals("admin"))
 		{
 			RequestDispatcher d = req.getRequestDispatcher("Profile");
 			d.forward(req, resp);
-			req.getRequestDispatcher("Profile").forward(req, resp);
+			//req.getRequestDispatcher("Profile").forward(req, resp);
 		}
 		else
 		{
-			RequestDispatcher d = req.getRequestDispatcher("Login.html");
+			RequestDispatcher d = req.getRequestDispatcher("Index.html");
 			d.include(req, resp);
-			p.print("<p style ='color:red'>Wrong Password</p>");
+			p.print("<br><p style ='color:red'>Wrong Password</p>");
 			
 		}
 }

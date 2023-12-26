@@ -16,7 +16,7 @@ public class DemoServ2 extends HttpServlet
 		PrintWriter p = resp.getWriter();
 		String uname = req.getParameter("uname");
 		
-		p.print("Welcome to your profile"+uname+"");
+		p.print("<h1>Welcome to your profile "+uname+"</h1>");
 		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
