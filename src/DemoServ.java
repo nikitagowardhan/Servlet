@@ -22,9 +22,10 @@ public class DemoServ extends HttpServlet {
 		
 		if(upass.equals("admin"))
 		{
-			RequestDispatcher d = req.getRequestDispatcher("Profile");
-			d.forward(req, resp);
+			//RequestDispatcher d = req.getRequestDispatcher("Profile");
+			//d.forward(req, resp);
 			//req.getRequestDispatcher("Profile").forward(req, resp);
+			resp.sendRedirect("Profile");
 		}
 		else
 		{
