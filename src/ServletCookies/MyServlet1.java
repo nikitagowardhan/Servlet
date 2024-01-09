@@ -1,15 +1,18 @@
+package ServletCookies;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Login")
-public class DemoServ extends HttpServlet {
+@WebServlet("/MyServlet1")
+public class MyServlet1 extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -17,15 +20,17 @@ public class DemoServ extends HttpServlet {
 		resp.setContentType("text.html");
 		PrintWriter p = resp.getWriter();
 		
-		String b = req.getParameter("uname");
-		String upass = req.getParameter("passwd");
+		String uname = req.getParameter("uname");
+		String upass = req.getParameter("upass");
+		
+		
+		
 		
 		if(upass.equals("admin"))
 		{
-			//RequestDispatcher d = req.getRequestDispatcher("Profile");
-			//d.forward(req, resp);
-			//req.getRequestDispatcher("Profile").forward(req, resp);
-			resp.sendRedirect("https://github.com/nikitagowardhan");
+			
+			req.getRequestDispatcher("MyServlet2").forward(req, resp);
+			
 		}
 		else
 		{
@@ -36,5 +41,5 @@ public class DemoServ extends HttpServlet {
 		}
 }
 
-	
+
 }
